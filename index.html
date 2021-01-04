@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" type="image/png" href="favicon.png" sizes="16x16">
+    <title>Practice Session</title>
+    <style>
+        p {
+            text-align: center;
+            font-size: 2em;
+            margin: 50px 0 50px 0;
+            color: LightGrey
+        }
+        body {
+            background-color: Black
+        }
+        div {
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+<div style="height: 90vh">
+    <p id="content"></p>
+</div>
+
+<script type="text/javascript" src="main.js"></script>
+<script>document.getElementById('content').innerHTML = fullSessionText</script>
+</body>
+</html>
