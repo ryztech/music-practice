@@ -35,22 +35,26 @@ const progressions = [
 const inversionStartingPoints = ['root-middle', 'middle-backwards', 'backwards-root']
 const majorMinor = ['major', 'minor']
 const forwardsBackwards = ['forwards', 'backwards']
+const repertoire = [
+    'Angel of Small Death',
+    'Lean on Me',
+    'Ain\'t No Sunshine'
+]
 
 let fullSessionText = ''
 
-const line = (text) => {
-    const textToAppendAndLog = `\n\n${text}`
-    fullSessionText+=textToAppendAndLog
-}
+const line = (text) => fullSessionText+= (fullSessionText === '' ? (`${text}`) : (`\n\n${text}`))
 const r = (list) => list[Math.floor(Math.random() * list.length)]
-const doRandomly = (oneInX, text) => { if (Math.floor(Math.random() * oneInX) + 1 === oneInX ) line(`${text}`)}
+const lineRandomly = (oneInX, text) => { if (Math.floor(Math.random() * oneInX) + 1 === oneInX ) line(`${text}`)}
 
-line('#############################################')
-doRandomly(3, 'Song: Broken Chord Balad')
+line('#####################')
+lineRandomly(3, 'Song: Broken Chord Balad')
 line(`Pattern practice: ${r(courseContent.patterns.handy)}, in ${r(keys)}, with progression ${r(progressions)}`)
 line(`Pattern practice: ${r(courseContent.patterns.other)}, in ${r(keys)}, with progression ${r(progressions)}`)
 line(`Blues pattern practice: ${r(courseContent.patterns.blues)}, in ${r(keys)}`)
-doRandomly(1, `Inversions practice: starting with ${r(inversionStartingPoints)}, ${r(majorMinor)}, ${r(forwardsBackwards)}`)
-line('#############################################')
+line(`Inversions practice: starting with ${r(inversionStartingPoints)}, ${r(majorMinor)}, ${r(forwardsBackwards)}`)
+lineRandomly(3, 'Theory flashcards')
+line(`Repertoire practice: ${r(repertoire)}`)
+line('#####################')
 
 console.log(fullSessionText);
