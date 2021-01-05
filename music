@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+PATH_TO_PROJECT=/Users/ryz/code/music-practice
+
+node "$PATH_TO_PROJECT"/main.js
