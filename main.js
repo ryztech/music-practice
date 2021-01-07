@@ -17,13 +17,24 @@ const courseContent = {
             ],
             blues: [
                 'straight eight boogie (alternating)',
-                'straight eight boogie (full)',
+                'straight eight boogie (constant)',
                 'blueberry hill',
                 '12/8 boogie shuffle',
                 'blues brothers'
             ]
-        }
+        },
+    balladStyle: {
+        pieces: [
+            '\'mixing it all together\'',
+            'auld lang syne'
+        ],
+        improvisation: [
+            'improvisation practice in Am',
+            'improvisation practice in Dm'
+        ]
+    }
 }
+
 const keys = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B']
 const progressions = [
     'I-IV-V',
@@ -32,8 +43,7 @@ const progressions = [
     'I – V – vi – iii – IV – I – IV – V',
     'I - vi - ii - V'
 ];
-const inversionStartingPoints = ['root-middle', 'middle-backwards', 'backwards-root']
-const majorMinor = ['major', 'minor']
+const inversionStartingPoints = ['root', 'middle', 'backwards']
 const forwardsBackwards = ['forwards', 'backwards']
 const repertoire = [
     'Angel of Small Death',
@@ -43,18 +53,21 @@ const repertoire = [
 
 let fullSessionText = ''
 
-const line = (text) => fullSessionText+= (fullSessionText === '' ? (`${text}`) : (`\n\n${text}`))
+const line = (text) => fullSessionText += (fullSessionText === '' ? (`${text}`) : (`\n\n${text}`))
 const r = (list) => list[Math.floor(Math.random() * list.length)]
 const lineRandomly = (oneInX, text) => { if (Math.floor(Math.random() * oneInX) + 1 === oneInX ) line(`${text}`)}
 
 line('#####################')
-lineRandomly(3, 'Song: Broken Chord Balad')
-line(`Pattern practice: ${r(courseContent.patterns.handy)}, in ${r(keys)}, with progression ${r(progressions)}`)
-line(`Pattern practice: ${r(courseContent.patterns.other)}, in ${r(keys)}, with progression ${r(progressions)}`)
-line(`Blues pattern practice: ${r(courseContent.patterns.blues)}, in ${r(keys)}`)
-line(`Inversions practice: starting with ${r(inversionStartingPoints)}, ${r(majorMinor)}, ${r(forwardsBackwards)}`)
+lineRandomly(3, 'Song: Broken Chord Ballad')
+line(`Pattern style: ${r(courseContent.patterns.handy)}, in ${r(keys)}, with progression ${r(progressions)}`)
+line(`Pattern style: ${r(courseContent.patterns.other)}, in ${r(keys)}, with progression ${r(progressions)}`)
+line(`Blues: ${r(courseContent.patterns.blues)}, in ${r(keys)}`)
+line(`Inversions: starting with ${r(inversionStartingPoints)}, ${r(forwardsBackwards)}`)
 lineRandomly(3, 'Theory flashcards')
 line(`Repertoire practice: ${r(repertoire)}`)
+lineRandomly(2, `Ballad style: ${courseContent.balladStyle.pieces[0]}`)
+line(`Ballad practice: ${r(courseContent.balladStyle.improvisation)}`)
+line(`Ballad practice: ${courseContent.balladStyle.pieces[1]}`)
 line('#####################')
 
 console.log(fullSessionText);
