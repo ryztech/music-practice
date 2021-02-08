@@ -58,7 +58,7 @@ const r = (list) => list[Math.floor(Math.random() * list.length)]
 const lineRandomly = (oneInX, text) => { if (Math.floor(Math.random() * oneInX) + 1 === oneInX ) line(`${text}`)}
 
 line('#####################')
-lineRandomly(3, 'Song: Broken Chord Ballad')
+lineRandomly(5, 'Song: Broken Chord Ballad')
 line(`Pattern style: ${r(courseContent.patterns.handy)}, in ${r(keys)}, with progression ${r(progressions)}`)
 line(`Pattern style: ${r(courseContent.patterns.other)}, in ${r(keys)}, with progression ${r(progressions)}`)
 line(`Blues: ${r(courseContent.patterns.blues)}, in ${r(keys)}`)
