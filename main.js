@@ -55,13 +55,14 @@ let fullSessionText = ''
 
 const line = (text) => fullSessionText += (fullSessionText === '' ? (`${text}`) : (`\n\n${text}`))
 const r = (list) => list[Math.floor(Math.random() * list.length)]
+const rs = (list) => list.splice(Math.floor(Math.random() * list.length), 1)
 const lineRandomly = (oneInX, text) => { if (Math.floor(Math.random() * oneInX) + 1 === oneInX ) line(`${text}`)}
 
 line('#####################')
 lineRandomly(5, 'Song: Broken Chord Ballad')
-line(`Pattern style: ${r(courseContent.patterns.handy)}, in ${r(keys)}, with progression ${r(progressions)}`)
-line(`Pattern style: ${r(courseContent.patterns.other)}, in ${r(keys)}, with progression ${r(progressions)}`)
-line(`Blues: ${r(courseContent.patterns.blues)}, in ${r(keys)}`)
+line(`Pattern style: ${r(courseContent.patterns.handy)}, in ${rs(keys)}, with progression ${rs(progressions)}`)
+line(`Pattern style: ${r(courseContent.patterns.other)}, in ${rs(keys)}, with progression ${rs(progressions)}`)
+line(`Blues: ${r(courseContent.patterns.blues)}, in ${rs(keys)}`)
 line(`Inversions: starting with ${r(inversionStartingPoints)}, ${r(forwardsBackwards)}`)
 lineRandomly(3, 'Theory flashcards')
 line(`Repertoire practice: ${r(repertoire)}`)
