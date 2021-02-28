@@ -67,9 +67,8 @@ line(`Blues: ${r(courseContent.patterns.blues)}, in ${rs(keys)}`)
 line(`Inversions: starting with ${r(inversionStartingPoints)}, ${r(forwardsBackwards)}`)
 lineRandomly(3, 'Theory flashcards')
 line(`Repertoire practice: ${r(repertoire)}`)
-lineRandomly(2, `Ballad style: ${courseContent.balladStyle.pieces[0]}`)
-line(`Ballad practice: ${r(courseContent.balladStyle.improvisation)}`)
-line(`Ballad practice: ${courseContent.balladStyle.pieces[1]}`)
+line('#####################')
+line(`Ballad practice: L pattern, L progression, R theme, R variation`)
 line('#####################')
 
 console.log(fullSessionText);
