@@ -74,17 +74,17 @@ let fullSessionText = ''
 
 const line = (text) => fullSessionText += (fullSessionText === '' ? (`${text}`) : (`\n\n${text}`))
 const r = (list) => list[Math.floor(Math.random() * list.length)]
-// const rs = (list) => list.splice(Math.floor(Math.random() * list.length), 1)
+const rs = (list) => list.splice(Math.floor(Math.random() * list.length), 1)
 const lineRandomly = (oneInX, text) => { if (Math.floor(Math.random() * oneInX) + 1 === oneInX) line(`${text}`) }
 
 line('#####################')
 lineRandomly(3, 'Theory flashcards')
-line(`Course patterns: ${r(allPatterns)}, in ${r(keys)}`)
+line(`Course patterns: ${r(allPatterns)}, in ${rs(keys)}`)
 line(`Inversions: ${r(inversionStartingPoints)}, starting ${r(majorMinor)}, ${r(blackWhite)} keys`)
 line(`Repertoire practice: ${r(repertoire)}`)
 line('#####################')
 const randomProgression = r(progressions)
-line(`Progression e.g. ${r(randomProgression.exampleSongs)}`)
+line(`Progression e.g. ${r(randomProgression.exampleSongs)}, in ${rs(keys)}`)
 line(`Chords ${randomProgression.chords}`)
 line('#####################')
 // lineRandomly(5, 'Song: Broken Chord Ballad')
