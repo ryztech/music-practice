@@ -41,7 +41,6 @@ const progressions = [
     { chords: 'I - IV - I - V', exampleSongs: ['Lean On Me'] },
     { chords: 'I - IV - V', exampleSongs: ['Good Riddance', 'Three Little Birds'] },
     { chords: 'I – V – vi – IV', exampleSongs: ['Let It Be', 'Torn', 'I\'m yours', 'Jar of Hearts', 'Wherever You Will Go', 'Run (chorus)', 'Can You Feel The Love Tonight', 'Where Is The Love?', 'She Will Be Loved', 'Hide And Seek', 'Paparazzi', 'Someone Like You', 'Ai Se Eu Te Pego', 'Demons'] },
-    { chords: 'I – V – vi – iii – IV – I – IV – V', exampleSongs: ['Firework', 'Under The Bridge'] },
     { chords: 'I - V7 - IV - I', exampleSongs: ['Lava Song'] },
     { chords: 'I - vi', exampleSongs: ['Hallelujah (intro)'] },
     { chords: 'I - vi - IV - V', exampleSongs: ['Stand By Me', 'Every Breath You Take', 'Perfect'] },
@@ -61,6 +60,9 @@ const progressions = [
     { chords: 'vi – IV – I - V', exampleSongs: ['Zombie', 'Save Tonight', 'Complicated', 'Numb', 'Grenade', 'Say Something', 'All of Me'] },
     { chords: 'IV – I - V - vi', exampleSongs: ['Let Her Go'] },
 ];
+const otherProgressions = [
+    { chords: 'I – V – vi – iii – IV – I – IV – V', exampleSongs: ['?'] }
+]
 const inversionStartingPoints = ['root', 'middle', 'backwards']
 const majorMinor = ['major', 'minor']
 const blackWhite = ['black', 'white']
