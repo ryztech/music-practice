@@ -86,9 +86,10 @@ line(`Inversions: ${r(inversionStartingPoints)}, starting ${r(majorMinor)}, ${r(
 line(`Repertoire practice: ${r(repertoire)}`)
 line('#####################')
 const randomProgression = r(progressions)
-line(`Progression: Chords ${randomProgression.chords}, in ${rs(keys)}`)
+line(`Progression: ${randomProgression.chords} in ${rs(keys)}`)
 line(`e.g. ${r(randomProgression.exampleSongs)}`)
 line('#####################')
+
 // lineRandomly(5, 'Song: Broken Chord Ballad')
 // line(`Pattern style: ${r(courseContent.patterns.handy)}, in ${rs(keys)}, with progression ${rs(progressions)[0].chords}`)
 // line(`Pattern style: ${r(courseContent.patterns.other)}, in ${rs(keys)}, with progression ${rs(progressions)[0].chords}`)
