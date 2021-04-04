@@ -2,32 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="icon" type="image/png" href="favicon.png" sizes="16x16">
     <title>Music Practice</title>
+
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
     <style>
-        p {
-            text-align: center;
-            font-size: 1.25em;
-            margin: 0 20px;
-            color: LightGrey
-        }
-        body {
-            background-color: #2e2e2e
-        }
-        div {
-            white-space: pre-wrap;
+        /* Dark theme override */
+        :root {
+            --bg: #212121;
+            --accent-bg: #2B2B2B;
+            --text: #DCDCDC;
+            --text-light: #ABABAB;
+            --border: #666;
+            --accent: #FFB300;
+            --accent-light: #FFECB3;
+            --code: #F06292;
+            --preformatted: #CCC;
+            --disabled: #111;
         }
     </style>
+
 </head>
 <body>
 
-<div>
-    <p id="content"></p>
-</div>
+<header>
+    <h1>Piano Practice</h1>
+    <p>Randomly generated exercises</p>
+</header>
 
+<main>
+    <p id="exercise1"></p>
+    <hr/>
+    <p id="exercise2"></p>
+    <hr/>
+    <p id="exercise3"></p>
+    <hr/>
+    <p id="exercise4"></p>
+    <hr/>
+
+    <details>
+        <summary id="songAndKey"></summary>
+        <p id="chords"></p>
+    </details>
+    <button onClick="history.go(0)">Reload</button>
+</main>
 <script type="text/javascript" src="main.js"></script>
-<script>document.getElementById('content').innerHTML = fullSessionText</script>
 </body>
 </html>

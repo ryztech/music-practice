@@ -72,28 +72,38 @@ const repertoire = [
     'Ain\'t No Sunshine'
 ]
 
-let fullSessionText = ''
+let exercise1 = ''
+let exercise2 = ''
+let exercise3 = ''
+let exercise4 = ''
+let songAndKey = ''
+let chords = ''
 
-const line = (text) => fullSessionText += (fullSessionText === '' ? (`${text}`) : (`\n\n${text}`))
+const setContent = (content, id) => document.getElementById(id).innerHTML = content
 const r = (list) => list[Math.floor(Math.random() * list.length)]
 const rs = (list) => list.splice(Math.floor(Math.random() * list.length), 1)
-const lineRandomly = (oneInX, text) => { if (Math.floor(Math.random() * oneInX) + 1 === oneInX) line(`${text}`) }
+const lineRandomly = (oneInX, text) =>  Math.floor(Math.random() * oneInX) + 1 === oneInX ? text : '';
 
-line('#####################')
-lineRandomly(3, 'Theory flashcards')
-line(`Course patterns: ${r(allPatterns)}, in ${rs(keys)}`)
-line(`Inversions: ${r(inversionStartingPoints)}, starting ${r(majorMinor)}, ${r(blackWhite)} keys`)
-line(`Repertoire practice: ${r(repertoire)}`)
-line('#####################')
+exercise1 = lineRandomly(3, 'Theory flashcards');
+exercise2 = `Patterns: ${r(allPatterns)}, in ${rs(keys)}`;
+exercise3 = `Inversions: ${r(inversionStartingPoints)}, starting ${r(majorMinor)}, ${r(blackWhite)} keys`;
+exercise4 = `Repertoire: ${r(repertoire)}`;
+
 const randomProgression = r(progressions)
-line(`Progression: ${randomProgression.chords} in ${rs(keys)}`)
-line(`e.g. ${r(randomProgression.exampleSongs)}`)
-line('#####################')
+songAndKey = `Progression &nbsp; ${randomProgression.chords}, &nbsp; in ${rs(keys)}`;
+chords = `e.g. ${r(randomProgression.exampleSongs)}`;
 
+setContent(exercise1, 'exercise1')
+setContent(exercise2, 'exercise2')
+setContent(exercise3, 'exercise3')
+setContent(exercise4, 'exercise4')
+setContent(songAndKey, 'songAndKey')
+setContent(chords, 'chords')
+
+// const line = (text) => fullSessionText += (fullSessionText === '' ? (`${text}`) : (`\n\n${text}`))
+// line('#####################')
 // lineRandomly(5, 'Song: Broken Chord Ballad')
 // line(`Pattern style: ${r(courseContent.patterns.handy)}, in ${rs(keys)}, with progression ${rs(progressions)[0].chords}`)
 // line(`Pattern style: ${r(courseContent.patterns.other)}, in ${rs(keys)}, with progression ${rs(progressions)[0].chords}`)
 // line(`Blues: ${r(courseContent.patterns.blues)}, in ${rs(keys)}`)
 // line(`Ballad practice: L pattern, L progression, R theme, R variation`)
-
-console.log(fullSessionText);
