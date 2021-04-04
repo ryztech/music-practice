@@ -90,8 +90,8 @@ exercise3 = `Inversions: ${r(inversionStartingPoints)}, starting ${r(majorMinor)
 exercise4 = `Repertoire: ${r(repertoire)}`;
 
 const randomProgression = r(progressions)
-songAndKey = `Progression &nbsp; ${randomProgression.chords}, &nbsp; in ${rs(keys)}`;
-chords = `e.g. ${r(randomProgression.exampleSongs)}`;
+songAndKey = `Progression:  ${r(randomProgression.exampleSongs)}, in ${rs(keys)}`;
+chords = `Chords: ${randomProgression.chords}`;
 
 setContent(exercise1, 'exercise1')
 setContent(exercise2, 'exercise2')
