@@ -52,12 +52,12 @@ const progressions = [
     { chords: 'i - v - VII', exampleSongs: ['Ain\'t No Sunshine'] },
     { chords: 'i - VI - VII', exampleSongs: ['Kryptonite'] },
     { chords: 'i - VI - V', exampleSongs: ['Believer'] },
-    { chords: 'i - VI - III', exampleSongs: ['Wake Me Up'] },
     { chords: 'i - VII - IV', exampleSongs: ['Wicked Game'] },
     { chords: 'i - VII - iv', exampleSongs: ['I Need a Dollar'] },
     { chords: 'ii – V – I', exampleSongs: ['Sunday Morning'] },
     { chords: 'III - VII - i - V', exampleSongs: ['Hej Sokoly chorus', 'Czerwone Jabluszko chorus'] },
     { chords: 'vi – IV – I - V', exampleSongs: ['Zombie', 'Save Tonight', 'Complicated', 'Numb', 'Grenade', 'Say Something', 'All of Me'] },
+    { chords: 'vi – IV – I', exampleSongs: ['Wake Me Up'] },
     { chords: 'IV – I - V - vi', exampleSongs: ['Let Her Go'] },
 ];
 const otherProgressions = [
