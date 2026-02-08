@@ -2,15 +2,12 @@ const courseContent = {
     patterns:
     {
         handy: [
-            'Basic',
-            '2-1 ballad',
-            'Bounce',
-            'Left Arpeggio'
-
-            // 'Straight beat gospel style',
-            // 'Half beat bounce',
-            // 'Split chord (and 7ths)',
-            // 'Bossa Nova Bounce'
+            'On the beat, plus &\'s',
+            'ballad basic',
+            'left hand toss',
+            'jumpy (I\'m yours)',
+            'left arpeggios',
+            'right arpeggios'
         ],
         other: [
             // 'left note / right chord',
@@ -42,26 +39,25 @@ const courseContent = {
 const allPatterns = [...courseContent.patterns.handy, ...courseContent.patterns.other, ...courseContent.patterns.blues];
 const keys = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B']
 const progressions = [
-    // { chords: 'I - III - vi - V', exampleSongs: ['Billionaire'] },
-    { chords: 'I - IV - I - V', exampleSongs: ['Lean On Me'] },
-    { chords: 'I - IV - V', exampleSongs: ['Good Riddance', 'Three Little Birds'] },
+    { chords: 'I - IV - V', exampleSongs: ['Good Riddance', 'Because I Got High', 'Wild Thing'] },
+    { chords: 'I - IV - I - V', exampleSongs: ['Lean On Me', 'Three Little Birds'] },
     { chords: 'I – V – vi – IV', exampleSongs: ['Let It Be', 'Torn', 'I\'m yours', 'Jar of Hearts', 'Wherever You Will Go', 'Run (chorus)', 'Can You Feel The Love Tonight', 'Where Is The Love?', 'She Will Be Loved', 'Hide And Seek', 'Paparazzi', 'Someone Like You', 'Ai Se Eu Te Pego', 'Demons'] },
+    { chords: 'I - vi - IV - V', exampleSongs: ['Stand By Me', 'Every Breath You Take', 'Perfect', 'Beautiful Girls'] },
+    { chords: 'vi – IV – I - V', exampleSongs: ['Zombie', 'Save Tonight', 'Complicated', 'Numb', 'Grenade', 'Say Something', 'All of Me'] },
+    { chords: 'i - V', exampleSongs: ['Hej Sokoly verse', 'Czerwone Jabluszko verse', 'Angel of small death first part'] },
+    // { chords: 'i - VI - VII', exampleSongs: ['Kryptonite'] },
+    { chords: 'ii – V – I', exampleSongs: ['Sunday Morning'] },
+    // { chords: 'I - vi', exampleSongs: ['Hallelujah (intro)'] },
     // { chords: 'I - V7 - IV - I', exampleSongs: ['Lava Song'] },
-    { chords: 'I - vi', exampleSongs: ['Hallelujah (intro)'] },
-    { chords: 'I - vi - IV - V', exampleSongs: ['Stand By Me', 'Every Breath You Take', 'Perfect'] },
     // { chords: 'I - VII - IV - I', exampleSongs: ['Teardrop'] },
     // { chords: 'I - VII - IV - I', exampleSongs: ['Addicted To Love'] },
     // { chords: 'i - III - iv - VI - V', exampleSongs: ['Too Close'] },
     // { chords: 'i - III - VII', exampleSongs: ['Closer'] },
-    { chords: 'i - V', exampleSongs: ['Hej Sokoly verse', 'Czerwone Jabluszko verse', 'Angel of small death first part'] },
     // { chords: 'i - v - VII', exampleSongs: ['Ain\'t No Sunshine'] },
-    // { chords: 'i - VI - VII', exampleSongs: ['Kryptonite'] },
     // { chords: 'i - VI - V', exampleSongs: ['Believer'] },
     // { chords: 'i - VII - IV', exampleSongs: ['Wicked Game'] },
     // { chords: 'i - VII - iv', exampleSongs: ['I Need a Dollar'] },
-    { chords: 'ii – V – I', exampleSongs: ['Sunday Morning'] },
     // { chords: 'III - VII - i - V', exampleSongs: ['Hej Sokoly chorus', 'Czerwone Jabluszko chorus'] },
-    { chords: 'vi – IV – I - V', exampleSongs: ['Zombie', 'Save Tonight', 'Complicated', 'Numb', 'Grenade', 'Say Something', 'All of Me'] },
     // { chords: 'vi – IV – I', exampleSongs: ['Wake Me Up'] },
     // { chords: 'IV – I - V - vi', exampleSongs: ['Let Her Go'] },
 ];
@@ -84,17 +80,13 @@ const lineRandomly = (oneInX, text) =>  Math.floor(Math.random() * oneInX) + 1 =
 
 const randomProgression = r(progressions)
 
-const songAndKey = `'${r(randomProgression.exampleSongs)}' chord progression, using ${r(allPatterns)} pattern`;
-const chords = `Chords: ${randomProgression.chords}`;
-const exercise2 = 'Try it with your eyes closed'
-const exercise3 = `Try it in ${rs(keys)}`;
+const exercise = `${randomProgression.chords} chord progression, using ${r(allPatterns)} pattern`;
+const exampleSong = `Example song: ${r(randomProgression.exampleSongs)}`;
 
-setContent(songAndKey, 'songAndKey')
-setContent(chords, 'chords')
-setContent(exercise2, 'exercise2')
-setContent(exercise3, 'exercise3')
+setContent(exercise, 'exercise')
+setContent(exampleSong, 'exampleSong')
 
-// removed to simplify practice until I relearn what I've forgotten
+// V1 removed to simplify practice until I relearn what I've forgotten
 // const exercise1 = lineRandomly(3, 'Theory flashcards');
 // const exercise2 = `Patterns: ${r(allPatterns)}, in ${rs(keys)}`;
 // const exercise3 = `Inversions: ${r(inversionStartingPoints)}, starting ${r(majorMinor)}, ${r(blackWhite)} keys`;
